@@ -1,12 +1,12 @@
 ## 11 câu hỏi phỏng vấn hack não về Git sẽ khiến bạn muốn khóc.
 
-Dựa theo việc khảo sát các developer gần đây nhất trên Stack Overflow , có đến hơn 70% developers sử dụng git , Tạo nên làn sóng sử dụng VCS trên thế giới. Git thường được sử dụng  trên việc phát triển mã nguồn mở hay phần mềm thương mại , đem lại nhiều lợi ích đáng kể cho cá nhân , nhóm và các doanh nghiệp.
+Dựa theo việc khảo sát các developer gần đây nhất trên Stack Overflow , có đến hơn 70% các developer sử dụng git , trở thành một trong những VCS được dùng nhiều nhất trên thế giới. Git được sử dụng phổ biến ở cả việc phát triển mã nguồn mở hay phần mềm thương mại , đem lại nhiều lợi ích đáng kể cho cá nhân , nhóm và các doanh nghiệp.
 
 #### Q1 : Git fork là gì ? Điểm khác biệt giữa fork , branch và clone ?
 
 - Fork là một remote , một bản sao chép phía server từ một repository.Một bản khác sinh ra từ bản gốc . Fork không phải là một khái niệm cụ thể của Git.Nó đơn giản là những ý tưởng về chính trị / xã hôi.
-- Clone không phải là fork; clone là một bản copy dưới local của một vài remote repository. Khi bạn clone , bạn thực ra là đang tạo nên bản copy của 1 thực thể repository gốc, bao gồm tất cả về lịch sử và các nhánh.
-- Branch  là một cơ chế để xử lý các thay đổi trong một kho lưu trữ duy nhất để cuối cùng hợp nhất chúng với phần còn lại của mã. Branch là một tập con của repository. Về mặt lý thuyết, nó là đại diện cho một luồng phát triển.
+- Clone không phải là fork; clone là một bản copy dưới local của một vài remote repository. Khi bạn clone , bạn thực ra là đang tạo nên bản copy của toàn bộ mã nguồn repository gốc, bao gồm tất cả về lịch sử và các nhánh.
+- Branch  là một cơ chế để xử lý các thay đổi trong một repository duy nhất để cuối cùng hợp nhất chúng với code còn lại. Branch là một tập con của repository. Về mặt lý thuyết, nó là đại diện cho một luồng phát triển.
 
 
 #### Q2: Điểm khác biệt giữa một "pull request" và một "branch"?
@@ -19,7 +19,7 @@ Dựa theo việc khảo sát các developer gần đây nhất trên Stack Over
 
 Hiểu đơn giản nhất là, git pull thực hiện git fetch sau đó là git merge
 
-Khi bạn sử dụng pull, Giu sẽ tự động thực hiện công việc của bạn thay bạn. Tùy theo từng hoàn cảnh , Git sẽ merge bất kỳ các commit nào vào nhan hs mà bạn đang làm việc.Pull sẽ tự động gộp các commit mà bạn sẽ không cần phải review trước.Nếu bạn không quản lý chặt chẽ nhánh của bạn , bạn sẽ thường xuyên gặp phải conflict.
+Khi bạn sử dụng pull, Git sẽ tự động thực hiện công việc thay bạn. Tùy theo từng hoàn cảnh , Git sẽ merge bất kỳ các commit nào vào nhánh mà bạn đang làm việc.Pull sẽ tự động gộp các commit mà bạn sẽ không cần phải review trước.Nếu bạn không quản lý chặt chẽ nhánh của bạn , bạn sẽ thường xuyên gặp phải conflict.
 
 Khi bạn fetch , Git sẽ tập hợp các commit từ nhánh đang được target không tồn tại trong nhánh của bạn và lưu trữ chúng ở trong local repository , tuy nhiên , nó sẽ không merge chúng với nhánh hiện tại. Điều đó thực sự hữu dụng nếu bạn cần giữ việc cập nhật repository, nhưng việc đó có thể bị ngưng nếu bạn cập nhật file của bạn.Để tích hợp commit vào trong nhánh master , sử dụng merge.
 
@@ -28,13 +28,13 @@ Khi bạn fetch , Git sẽ tập hợp các commit từ nhánh đang được ta
 Giả sử bạn gặp vấn đề này ,C chính là Head và (F) là trạng thái files của bạn.
 Để loại bỏ những thay đổi trong commit:
 Bây giờ B chính là Head bởi vì bạn để sử dụng --hard , file của bạn đã reset trạng thái về commit B
-để hoàn tác lại commit nhưng giữ lại các thay đổi:
+để quay trở lại commit nhưng giữ lại các thay đổi:
 
 ``
 git reset HEAD~1
 ``
 Bây gừi chúng ta sẽ bảo Git di chuyển con trỏ Head trở lại commit (B) và để các file giống nhau và các trạng thái git hiển thị các thay đổi đã được check trong C
-Để hoàn tác commit nhưng giữ file và index
+Để quay trở lại commit nhưng giữ file và index
 Khi bạn thực hiện git status, bạn sẽ thấy những file cùng index như nhau trước đấy.
 
 #### Q5: "git cherry-pick" là gì?
@@ -54,9 +54,9 @@ Difficulty: ⭐⭐⭐
 
 Cơ chế Forking về cơ bản là khác hoàn toàn với cơ chế phổ biến khác của Git.Thay vì sử dụng một kho lưu trữ phía máy chủ duy nhất hoạt động như một codebase "trung tâm" , nó cung cấp mọi nhà phát triển  có repository phía máy chủ của riêng họ. Cơ ché Forking thường được thấy trong những dự án mã nguồn mở.
 
-Ưu điểm chính của cơ chế forking là những đóng góp có thể được tích hợp mà không cần mọi người phải đẩy vào repository trung tâm để điều khiển việc xóa lịch sử.Các nhà phát triển đẩy vào những repository phía server của họ , và duy nhất những người bảo trì dự án có thể push vào repository chính thức.
+Ưu điểm chính của cơ chế forking là những đóng góp có thể được tích hợp mà không cần mọi người phải đẩy vào repository chính để điều khiển việc xóa lịch sử.Các nhà phát triển đẩy vào những repository phía server của họ , và duy nhất những người bảo trì dự án có thể push vào repository chính thức.
 
-Khi những nhà phát triển chuẩn bị để công bố một commit cục bộ , họ đẩy những commit vào repository riêng không phải là repository chính thức.sau đó họ gửi yêu cầu kéo file repository chính , cho phép người bảo trì dự án biết rằng bản cập nhật đã sẵn sàng để được tích hợp.
+Khi những nhà phát triển chuẩn bị để công bố một commit cục bộ , họ đẩy những commit vào repository riêng không phải là repository chính thức.sau đó họ gửi pull request file repository chính , cho phép người bảo trì dự án biết rằng bản cập nhật đã sẵn sàng để được tích hợp.
 
 #### Q7:Nói cho tôi biết điểm khác biệt giữa Head , working tree  và index trong git ? 
 Topic: Git
@@ -74,14 +74,14 @@ Master : thường xuyên sử dụng để  phát hành trên LIVE ,với mọi
 
 Hotfix - nhánh bảo trì hay 'hotfix' được sử dụng trong bản vá production được phát hành nhanh chóng. Nhánh Hotfix rất giống với nhánh release và nhánh feature ngoại trừ việc chúng dựa trên master thay vì develop.
 
-Develop - là nhánh bảo gồm tất cả nhánh feature đã được merge và tất cả các test đã được thực hiện.Khi tất cả mọi vấn để đã được kiểm tra và sửa chữa nó mới có thể được merge vào nhánh master.
+Develop - là nhánh bao gồm tất cả nhánh feature đã được merge và tất cả các test đã được thực hiện.Khi tất cả mọi vấn để đã được kiểm tra và sửa chữa nó mới có thể được merge vào nhánh master.
 
 Feature - mỗi feature mới thì nên được đặt ở nhánh riêng , có thể được đẩy vào nhánh develop như cha mẹ chúng.
 
 #### Q9: Khi nào bạn nên sử dụng 'git stash' ? 
 Topic: Git
 Difficulty: ⭐⭐⭐
-Câu lệnh git stash lấy tất cả những thay đổi uncommited của bạn (bao gồm cả staged và unstaged) , lưu chúng để sử dụng sau này , và sau đó phục hồi chúng từ bản sao làm việc của bạn.
+Câu lệnh git stash lấy tất cả những thay đổi chưa được commit của bạn (bao gồm cả staged và unstaged) , lưu chúng để sử dụng sau này , và sau đó phục hồi chúng từ bản sao làm việc của bạn.
 
 Ví dụ:
 `
@@ -125,11 +125,11 @@ quay trở lại công việc
 $ git stash pop
 `
 
-#### Q10:Làm cách nào để loại bỏ file từ fit mà không phải loại bỏ chúng từ file hệ thống?
+#### Q10:Làm cách nào để loại bỏ file từ git mà không phải loại bỏ chúng từ file hệ thống?
 Topic: Git
 Difficulty: ⭐⭐⭐⭐
 
-Nếu bạn không cẩn thận trong việc dùng git add , bạn sẽ thêm những file mà bạn không hề muốn commit. Tuy nhiên git rm sẽ loại bỏ chung từ cả trong staging (index) , tốt như hệ thống file của bạn (working tree) , có thể không phải thứ bạn thực sự muốn.
+Nếu bạn không cẩn thận trong việc dùng git add , bạn sẽ thêm những file mà bạn không hề muốn commit. Tuy nhiên git rm sẽ loại bỏ chung từ cả trong staging (index) ,cũng như hệ thống file của bạn (working tree) , có thể không phải thứ bạn thực sự muốn.
 
 Thay vào đó hãy sử dụng git reset : 
 `
@@ -167,8 +167,6 @@ A <- B <- C <- D <- E
 Với rebase bạn có thể  dùng trên nhánh khác như một base mới cho  công việc của bạn.
 
 Khi bạn sử dụng : 
-
-When to use:
 
  - Nếu bạn có bất cứ nghi ngờ nào , sử dụng merge.
 - Chọn rebase hay merge cơ bản là việc bạn muốn lịch sử của bạn trông như nào thôi. 
