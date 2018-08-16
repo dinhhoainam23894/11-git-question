@@ -4,7 +4,7 @@ Dựa theo việc khảo sát các developer gần đây nhất trên Stack Over
 
 #### Q1 : Git fork là gì ? Điểm khác biệt giữa fork , branch và clone ?
 
-- Fork là một remote , một bản sao chép phía server từ một repository.Một bản khác sinh ra từ bản gốc . Fork không phải là một khái niệm cụ thể của Git.Nó đơn giản là những ý tưởng về chính trị / xã hôi.
+- Fork là một remote , một bản sao chép phía server từ một repository.Một bản khác sinh ra từ bản gốc . Fork không phải là một khái niệm cụ thể của Git.Nó đơn giản là những ý tưởng về chính trị / xã hội.
 - Clone không phải là fork; clone là một bản copy dưới local của một vài remote repository. Khi bạn clone , bạn thực ra là đang tạo nên bản copy của 1 thực thể repository gốc, bao gồm tất cả về lịch sử và các nhánh.
 - Branch  là một cơ chế để xử lý các thay đổi trong một kho lưu trữ duy nhất để cuối cùng hợp nhất chúng với phần còn lại của mã. Branch là một tập con của repository. Về mặt lý thuyết, nó là đại diện cho một luồng phát triển.
 
@@ -19,7 +19,7 @@ Dựa theo việc khảo sát các developer gần đây nhất trên Stack Over
 
 Hiểu đơn giản nhất là, git pull thực hiện git fetch sau đó là git merge
 
-Khi bạn sử dụng pull, Giu sẽ tự động thực hiện công việc của bạn thay bạn. Tùy theo từng hoàn cảnh , Git sẽ merge bất kỳ các commit nào vào nhan hs mà bạn đang làm việc.Pull sẽ tự động gộp các commit mà bạn sẽ không cần phải review trước.Nếu bạn không quản lý chặt chẽ nhánh của bạn , bạn sẽ thường xuyên gặp phải conflict.
+Khi bạn sử dụng pull, Git sẽ tự động thực hiện công việc của bạn thay bạn. Tùy theo từng hoàn cảnh , Git sẽ merge bất kỳ các commit nào vào nhánh mà bạn đang làm việc. Pull sẽ tự động gộp các commit mà bạn sẽ không cần phải review trước.Nếu bạn không quản lý chặt chẽ nhánh của bạn , bạn sẽ thường xuyên gặp phải conflict.
 
 Khi bạn fetch , Git sẽ tập hợp các commit từ nhánh đang được target không tồn tại trong nhánh của bạn và lưu trữ chúng ở trong local repository , tuy nhiên , nó sẽ không merge chúng với nhánh hiện tại. Điều đó thực sự hữu dụng nếu bạn cần giữ việc cập nhật repository, nhưng việc đó có thể bị ngưng nếu bạn cập nhật file của bạn.Để tích hợp commit vào trong nhánh master , sử dụng merge.
 
@@ -65,7 +65,7 @@ The working tree/working directory/workspace là thư mục cây của (nguồn)
 The index/staging là các file đơn lẻ , lớn, file nhị phân trong /,git/index , liệt kê tất cả các file ở trong nhánh hiện tại ,  check tổng sha1 , thời gian và tên file - nó không phải là thư mục khác với các bản sao file trong đó.
 Head là một tham chiếu đến commit cuối cùng trên check-out nhánh hiện tại.
 
-#### Q8:Bạn hãy giải thích về cơ chế của Gitflow? C
+#### Q8:Bạn hãy giải thích về cơ chế của Gitflow? 
 Topic: Git
 Difficulty: ⭐⭐⭐
 
@@ -76,7 +76,7 @@ Hotfix - nhánh bảo trì hay 'hotfix' được sử dụng trong bản vá pro
 
 Develop - là nhánh bảo gồm tất cả nhánh feature đã được merge và tất cả các test đã được thực hiện.Khi tất cả mọi vấn để đã được kiểm tra và sửa chữa nó mới có thể được merge vào nhánh master.
 
-Feature - mỗi feature mới thì nên được đặt ở nhánh riêng , có thể được đẩy vào nhánh develop như cha mẹ chúng.
+Feature - mỗi feature mới thì nên được đặt ở nhánh riêng , có thể được đẩy vào nhánh develop như nhánh cha của chúng.
 
 #### Q9: Khi nào bạn nên sử dụng 'git stash' ? 
 Topic: Git
